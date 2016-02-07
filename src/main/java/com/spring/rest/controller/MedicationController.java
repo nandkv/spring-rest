@@ -17,8 +17,17 @@ public class MedicationController {
         this.medicationService = medicationService;
     }
     
-
-    @RequestMapping("/medications")
+    @RequestMapping("/")
+    public String welcome() {    	
+        return "Hello World";
+    }
+    
+    @RequestMapping("/support")
+    public String support() {    	
+        return "Hello Support";
+    }
+    
+    @RequestMapping("/api/medications")
     public Medication getMedications(@RequestParam(name="patientId", defaultValue="15233" ) String patientId) {    	
         return medicationService.getMedicationByPatientId(patientId);
     }
