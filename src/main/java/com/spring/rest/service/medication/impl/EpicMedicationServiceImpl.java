@@ -24,7 +24,7 @@ public class EpicMedicationServiceImpl implements MedicationService {
 	@Override
 	@Transactional(readOnly=true)
 	public PatientResponseDTO findMedicationByPatientId(String patientId) {
-		Patient patient = patientDao.findById(1);
+		Patient patient = patientDao.findById(Long.valueOf(patientId));
 		return PatientDTOMapper.INSTANCE.patientToPatientResponseDto(patient);
 	}
 

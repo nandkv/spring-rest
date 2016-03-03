@@ -37,19 +37,5 @@ public class PatientResponseDTO extends BaseResponseDTO {
 		this.medications = medications;
 	}
 
-	
-	public void setName(String name){
-		if (this.getPatient() == null){
-			this.patient = new Patient();
-		}
-		this.patient.setName(name);
-	}
-
-	public void setUserid(String userid){
-		if (this.getPatient() == null){
-			this.patient = new Patient();
-		}
-		this.patient.setUserid(userid);
-	}
 
 }
