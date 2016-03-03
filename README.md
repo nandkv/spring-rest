@@ -1,3 +1,3 @@
-# gs-medications
+# Spring Rest Project
 
 Sprint Rest Demo Project
