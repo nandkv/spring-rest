@@ -12,11 +12,11 @@ import com.spring.rest.model.patient.Patient;
 import com.spring.rest.service.medication.MedicationService;
 
 @Service
-public class EpicMedicationServiceImpl implements MedicationService {
+public class PrimaryMedicationServiceImpl implements MedicationService {
 	private PatientDao patientDao;
 	
 	@Inject
-	public EpicMedicationServiceImpl(PatientDao patientDao) {
+	public PrimaryMedicationServiceImpl(PatientDao patientDao) {
 		this.patientDao = patientDao;
 	}
 

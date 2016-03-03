@@ -1,4 +1,4 @@
-package com.spring.rest;
+package com.spring.rest.security;
 
 import javax.inject.Inject;
 

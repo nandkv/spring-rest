@@ -12,11 +12,11 @@ import com.spring.rest.service.medication.MedicationService;
 @RestController
 public class MedicationController {
 	//http://blogs.sourceallies.com/2011/08/spring-injection-with-resource-and-autowired/ 
-    private MedicationService epicMedicationServiceImpl;
+    private MedicationService primaryMedicationServiceImpl;
 
     @Inject
-    public MedicationController(MedicationService epicMedicationServiceImpl) {
-        this.epicMedicationServiceImpl = epicMedicationServiceImpl;
+    public MedicationController(MedicationService primaryMedicationServiceImpl) {
+        this.primaryMedicationServiceImpl = primaryMedicationServiceImpl;
     }
     
     @RequestMapping("/")
@@ -30,8 +30,8 @@ public class MedicationController {
     }
     
     @RequestMapping("/api/medications")
-    public PatientResponseDTO getMedications(@RequestParam(name="patientId", defaultValue="15233" ) String patientId)  {    	
-        return epicMedicationServiceImpl.findMedicationByPatientId(patientId);
+    public PatientResponseDTO getMedications(@RequestParam(name="patientId", defaultValue="1" ) String patientId)  {    	
+        return primaryMedicationServiceImpl.findMedicationByPatientId(patientId);
     }
     
 }
