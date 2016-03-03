@@ -1,14 +1,8 @@
-package com.spring.rest.domain;
+package com.spring.rest.domain.patient;
 
 public class Medication {
 	private String name;
 	private String instructions;
-	
-	public Medication(String name, String instructions) {
-		super();
-		this.name = name;
-		this.instructions = instructions;
-	}
 	
 	/**
 	 * @param name the name to set

@@ -1,6 +1,7 @@
 package com.spring.rest;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.inject.Inject;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,7 +14,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 @EnableWebSecurity
 public class SecurityConfig  {
 
-    @Autowired
+    @Inject
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception { 
         auth
         .inMemoryAuthentication()
@@ -67,8 +68,6 @@ public class SecurityConfig  {
                 .formLogin();		
         }
 	}
-
-
 
 
 }

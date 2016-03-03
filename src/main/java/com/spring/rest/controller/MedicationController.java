@@ -1,20 +1,22 @@
 package com.spring.rest.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.inject.Inject;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.spring.rest.domain.Medication;
-import com.spring.rest.service.MedicationService;
+import com.spring.rest.dto.patient.PatientResponseDTO;
+import com.spring.rest.service.medication.MedicationService;
 
 @RestController
 public class MedicationController {
-    private MedicationService medicationService;
+	//http://blogs.sourceallies.com/2011/08/spring-injection-with-resource-and-autowired/ 
+    private MedicationService epicMedicationServiceImpl;
 
-    @Autowired
-    public MedicationController(MedicationService medicationService) {
-        this.medicationService = medicationService;
+    @Inject
+    public MedicationController(MedicationService epicMedicationServiceImpl) {
+        this.epicMedicationServiceImpl = epicMedicationServiceImpl;
     }
     
     @RequestMapping("/")
@@ -28,8 +30,8 @@ public class MedicationController {
     }
     
     @RequestMapping("/api/medications")
-    public Medication getMedications(@RequestParam(name="patientId", defaultValue="15233" ) String patientId) {    	
-        return medicationService.getMedicationByPatientId(patientId);
+    public PatientResponseDTO getMedications(@RequestParam(name="patientId", defaultValue="15233" ) String patientId)  {    	
+        return epicMedicationServiceImpl.findMedicationByPatientId(patientId);
     }
     
 }
