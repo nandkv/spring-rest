@@ -1,3 +1,19 @@
 /target/
 
 src/main/java/com/spring/rest/dao/config/PersistenceConfig.java
+
+.classpath
+
+.factorypath
+
+.classpath
+
+*.prefs
+
+*.prefs
+
+*.log
+
+.classpath
+
+.settings/org.eclipse.jdt.core.prefs

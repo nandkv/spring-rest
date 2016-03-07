@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: ${environment}
+    
+datasource:
+  db:
+    driver-class-name:  com.mysql.jdbc.Driver
+    url:  jdbc:mysql://localhost:3306/spring_app?useUnicode=true&characterEncoding=utf8
+    name: 
+    username: root
+    password: sairam76
+    
+hibernate:
+    cache.use_second_level_cache: true
+    cache.use_query_cache:  false
+    generate_statistics:  true
+    cache.region.factory_class: com.spa.config.hazelcast.HazelcastCacheRegionFactory
+    cache.use_minimal_puts: true
+    cache.hazelcast.use_lite_member:  true
+    
+jpa:
+    persistence-unit-name:  spring-app
+    database-platform:  org.hibernate.dialect.MySQLInnoDBDialect
+    database: MYSQL
+    hibernate.show_sql: true
+    hibernate.generated_ddl:  true
+    hibernate.hbm2ddl.auto: update
+    hibernate.dialect:  org.hibernate.dialect.MySQL5Dialect
+ 
