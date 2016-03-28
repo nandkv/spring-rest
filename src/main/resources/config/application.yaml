@@ -8,7 +8,7 @@ datasource:
     url:  jdbc:mysql://localhost:3306/spring_app?useUnicode=true&characterEncoding=utf8
     name: 
     username: root
-    password: sairam76
+    password: <password>
     
 hibernate:
     cache.use_second_level_cache: true
